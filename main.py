@@ -45,13 +45,9 @@ def main():
 
     with st.sidebar:
         st.title("🎈 Okld's Gallery")
-
-        with st.expander("✨ APPS", True):
-            user, password = load_login()
-            load_text(user, password)
-
-        with st.expander("🧩 COMPONENTS", True):
-            st.title("🎈 Okld's Gallery")
+    
+    user, password = load_login()
+    load_text(user, password)
 
 
 if __name__ == "__main__":
