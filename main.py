@@ -19,7 +19,7 @@ def load_text (user, password):
         if user in users and users[user] == password:
             resultat = (clau + " " + text).upper()  # Exemple simple
             # st.write("Resultat:\n", resultat)
-            st.write("Resultat:\n", "Aquesta web encara no està disponible. Trenca't una mica el cap, va!" )
+            st.write("Resultat:\n", "Aquesta web encara no està disponible. Trenca't una mica el cap, va! 🧠" )
 
         else:
             st.error("Credencials incorrectes")
