@@ -45,6 +45,8 @@ def load_sidebar():
         "Clau": ["AAAA", "BBBB", "CCCC"],
         "Text": ["AAAAAAAAAAAAAAAAAAAA", "BBBBBBBBBBBBBBBBBBBB", "CCCCCCCCCCCCCCCCCCCC"]
     })
+
+    data["Text"] = data["Text"].str[:7]
     
     st.table(data)
 
