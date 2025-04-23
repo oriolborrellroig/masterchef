@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("MasterChef II: Encrypted edition")
 
-opcions = st.radio("Tria una acció:", ["Majúscules", "Minúscules", "Title Case"])
+opcions = st.selectbox("Tria una acció:", ["Encriptar", "Desencriptar"])
 clau = st.text_input("Clau")
 text = st.text_area("Text 2", height=400)  # quadre més alt
 
