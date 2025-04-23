@@ -41,6 +41,7 @@ def load_login ():
 
 def load_sidebar():
     data = pd.DataFrame({
+        "Usuari": ["AAAA", "BBBB", "CCCC"],
         "Clau": ["AAAA", "BBBB", "CCCC"],
         "Text": ["AAAAAAAAAAAAAAAAAAAA", "BBBBBBBBBBBBBBBBBBBB", "CCCCCCCCCCCCCCCCCCCC"]
     })
