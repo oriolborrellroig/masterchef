@@ -1,8 +1,12 @@
 import streamlit as st
 
-from streamlit_gallery.utils.page import page_group
+users = {
+    "usuari1": "contrasenya123",
+    "maria": "1234"
+}
+
     
-def load_text ():
+def load_text (user, password):
     st.subheader("Text")
 
     opcions = st.selectbox("Tria una acció:", ["Encriptar", "Desencriptar"])
@@ -21,10 +25,6 @@ def load_text ():
 
 def load_login ():
     # Exemple simple
-    users = {
-        "usuari1": "contrasenya123",
-        "maria": "1234"
-    }
 
     with st.sidebar:
         st.title("🎈 Okld's Gallery")
@@ -41,22 +41,16 @@ def load_login ():
 
 
 def main():
-    page = page_group("p")
 
     with st.sidebar:
         st.title("🎈 Okld's Gallery")
 
         with st.expander("✨ APPS", True):
-            load_login()
-            load_text()
+            user, password = load_login()
+            load_text(user, password)
 
         with st.expander("🧩 COMPONENTS", True):
-            page.item("Ace editor", components.ace_editor)
-            page.item("Disqus", components.disqus)
-            page.item("Elements⭐", components.elements)
-            page.item("Pandas profiling", components.pandas_profiling)
-            page.item("Quill editor", components.quill_editor)
-            page.item("React player", components.react_player)
+            st.title("🎈 Okld's Gallery")
 
 
 if __name__ == "__main__":
