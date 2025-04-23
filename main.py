@@ -1,9 +1,9 @@
 import streamlit as st
 
-st.title("Transformador de Text")
+st.title("MasterChef II: Encrypted edition")
 
-input1 = st.text_input("Text 1")
-input2 = st.text_input("Text 2")
+input1 = st.text_input("Clau")
+input2 = st.text_area("Text")
 
 if st.button("Transforma"):
     resultat = (input1 + " " + input2).upper()  # Exemple simple
