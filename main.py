@@ -26,9 +26,6 @@ def load_text (user, password):
 def load_login ():
     # Exemple simple
 
-    with st.sidebar:
-        st.title("🎈 Okld's Gallery")
-
     st.subheader("User")
 
     col1, col2 = st.columns(2)
@@ -44,7 +41,7 @@ def load_login ():
 def main():
 
     with st.sidebar:
-        st.title("🎈 Okld's Gallery")
+        st.title("📖 Historial")
     
     user, password = load_login()
     load_text(user, password)
