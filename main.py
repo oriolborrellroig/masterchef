@@ -43,10 +43,10 @@ def load_sidebar():
     data = pd.DataFrame({
         "Usuari": ["AAAA", "BBBB", "CCCC"],
         "Clau": ["AAAA", "BBBB", "CCCC"],
-        "Text": ["AAAAAAAAAAAAAAAAAAAA", "BBBBBBBBBBBBBBBBBBBB", "CCCCCCCCCCCCCCCCCCCC"]
+        "Out Text": ["AAAAAAAAAAAAAAAAAAAA", "BBBBBBBBBBBBBBBBBBBB", "CCCCCCCCCCCCCCCCCCCC"]
     })
 
-    data["Text"] = data["Text"].str[:7] + "..."
+    data["Out Text"] = data["Out Text"].str[:7] + "..."
     
     st.table(data)
 
