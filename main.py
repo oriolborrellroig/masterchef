@@ -5,20 +5,6 @@ users = {
     "maria": "1234"
 }
 
-st.markdown(
-    """
-    <style>
-        [data-testid="stSidebar"] {
-            width: 400px !important;  /* Amplada desitjada */
-        }
-        [data-testid="stSidebar"] > div:first-child {
-            width: 400px !important;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
     
 def load_text (user, password):
     st.subheader("Text")
