@@ -38,6 +38,7 @@ def load_login ():
 
     with col2:
         password = st.text_input("Contrasenya", type="password")
+    return user, password
 
 
 def main():
