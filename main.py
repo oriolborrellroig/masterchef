@@ -9,11 +9,12 @@ users = {
     "maria": "1234"
 }
 
-st.title("Login")
+st.subheader("User")
 
 usuari = st.text_input("Usuari")
 contrasenya = st.text_input("Contrasenya", type="password")
 
+st.subheader("Text")
 
 opcions = st.selectbox("Tria una acció:", ["Encriptar", "Desencriptar"])
 clau = st.text_input("Clau")
