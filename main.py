@@ -11,8 +11,14 @@ users = {
 
 st.subheader("User")
 
-usuari = st.text_input("Usuari")
-contrasenya = st.text_input("Contrasenya", type="password")
+col1, col2 = st.columns(2)
+
+with col1:
+    user = st.text_input("Usuari")
+
+with col2:
+    password = st.text_input("Contrasenya", type="password")
+    
 
 st.subheader("Text")
 
@@ -21,7 +27,7 @@ clau = st.text_input("Clau")
 text = st.text_area("Text 2", height=200)  # quadre més alt
 
 if st.button("Executa"):
-    if usuari in users and users[usuari] == contrasenya:
+    if user in users and users[user] == password:
         resultat = (clau + " " + text).upper()  # Exemple simple
         # st.write("Resultat:\n", resultat)
         st.write("Resultat:\n", "Aquesta web encara no està disponible. Trenca't una mica el cap, va" )
