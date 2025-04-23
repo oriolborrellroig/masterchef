@@ -41,8 +41,8 @@ def load_login ():
 
 def load_sidebar():
     data = pd.DataFrame({
-        "Nom": ["Anna", "Joan", "Maria"],
-        "Edat": [23, 31, 27]
+        "Clau": ["AAAA", "BBBB", "CCCC"],
+        "Text": ["AAAAAAAAAAAAAAAAAAAA", "BBBBBBBBBBBBBBBBBBBB", "CCCCCCCCCCCCCCCCCCCC"]
     })
     
     st.table(data)
