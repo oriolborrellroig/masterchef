@@ -18,7 +18,7 @@ st.subheader("Text")
 
 opcions = st.selectbox("Tria una acció:", ["Encriptar", "Desencriptar"])
 clau = st.text_input("Clau")
-text = st.text_area("Text 2", height=400)  # quadre més alt
+text = st.text_area("Text 2", height=200)  # quadre més alt
 
 if st.button("Executa"):
     if usuari in users and users[usuari] == contrasenya:
