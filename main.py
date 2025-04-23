@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+
 
 users = {
     "usuari1": "contrasenya123",
@@ -37,11 +39,20 @@ def load_login ():
         password = st.text_input("Contrasenya", type="password")
     return user, password
 
+def load_sidebar():
+    data = pd.DataFrame({
+        "Nom": ["Anna", "Joan", "Maria"],
+        "Edat": [23, 31, 27]
+    })
+    
+    st.table(data)
+
 
 def main():
 
     with st.sidebar:
         st.title("📖 Historial")
+        load_sidebar()
     
     user, password = load_login()
     load_text(user, password)
