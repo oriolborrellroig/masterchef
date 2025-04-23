@@ -60,4 +60,5 @@ def main():
 
 if __name__ == "__main__":
     st.set_page_config(page_title="MasterChef II: Encrypted edition", page_icon="🕵️‍♂️")
+    st.title("MasterChef II: Encrypted edition")
     main()
