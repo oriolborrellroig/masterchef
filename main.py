@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("MasterChef II: Encrypted edition 🕵️‍♂️📜")
+st.title("MasterChef II: Encrypted edition🕵️‍♂️📜")
 
 opcions = st.selectbox("Tria una acció:", ["Encriptar", "Desencriptar"])
 clau = st.text_input("Clau")
