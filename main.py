@@ -7,5 +7,5 @@ clau = st.text_input("Clau")
 text = st.text_area("Text 2", height=400)  # quadre més alt
 
 if st.button("Executa"):
-    resultat = (input1 + " " + input2).upper()  # Exemple simple
+    resultat = (clau + " " + text).upper()  # Exemple simple
     st.write("Resultat:\n", resultat)
