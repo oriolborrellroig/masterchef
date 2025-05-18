@@ -4,7 +4,7 @@ from encrypter import VigenereCatala
 st.title("MasterChef II: Encrypted edition🕵️‍♂️")
 
 opcions = st.selectbox("Tria una acció:", ["Desencriptar", "Encriptar"])
-clau = st.text_input("Clau").upper()
+clau = st.text_input("Clau").upper().replace(" ", "")
 text = st.text_area("Text 2", height=400)  # quadre més alt
 
 v = VigenereCatala(clau)
