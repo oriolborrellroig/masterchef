@@ -20,10 +20,19 @@ def elimina_accents(text):
     text_sense_accents = ''.join(c for c in text_normalitzat if unicodedata.category(c) != 'Mn')
     return text_sense_accents
 
+def neteja_caracters_especials(text):
+    # 1. Normalitza per treure accents i dièresis
+    text = unicodedata.normalize('NFD', text)
+    text = ''.join(c for c in text if unicodedata.category(c) != 'Mn')
+    # 2. Elimina caràcters especials (només lletres i números si vols)
+    text = re.sub(r'[^A-Za-z0-9 ]', '', text)
+    return text
+
 opcions = st.selectbox("Tria una acció:", ["Desencriptar", "Encriptar"])
 clau = st.text_input("Clau").upper().replace(" ", "")
 clau = elimina_accents(clau)
-text = st.text_area("Text 2", height=400)  # quadre més alt
+clau = neteja_caracters_especials(clau)
+text = st.text_area("Text 2", height=300)  # quadre més alt
 
 v = VigenereCatala(clau)
 
