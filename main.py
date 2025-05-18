@@ -18,4 +18,4 @@ if st.button("Executa"):
         resultat = v.vigenere(text, clau, encripta=False, barreja_majuscules=False)
         st.write("Resultat:\n", resultat)
     else:
-        st.write("Algo ha anat malament, torna a intentar" )
+        st.write("Algo ha anat malament, torna a intentar")
