@@ -1,42 +1,41 @@
 import random
+import unicodedata
 
-# Alfabet català (sense Ç)
-ALFABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-N = len(ALFABET)
+class VigenereCatala:
+    def __init__(self, clau):
+        self.ALFABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        self.N = len(self.ALFABET)
 
-def netejar_text(text):
-    import unicodedata
-    # Elimina accents i converteix a majúscules
-    text = ''.join(
-        c for c in unicodedata.normalize('NFD', text)
-        if unicodedata.category(c) != 'Mn'
-    )
-    return text.upper()
+    def _netejar_text(self, text):
+        # Elimina accents i converteix a majúscules
+        text = ''.join(
+            c for c in unicodedata.normalize('NFD', text)
+            if unicodedata.category(c) != 'Mn'
+        )
+        return text.upper()
 
-def lletra_valida(c):
-    return c in ALFABET
+    def _lletra_valida(self, c):
+        return c in self.ALFABET
 
-def vigenere(text, clau, encripta=True, barreja_majuscules=True):
-    text = netejar_text(text)
-    clau = netejar_text(clau)
-    resultat = []
-    idx_clau = 0
+    def vigenere(self, text, clau, encripta=True, barreja_majuscules=True):
+        text = self._netejar_text(text)
+        resultat = []
+        idx_clau = 0
 
-    for c in text:
-        if lletra_valida(c):
-            idx_text = ALFABET.index(c)
-            idx_clau_actual = ALFABET.index(clau[idx_clau % len(clau)])
-            if encripta:
-                nova_idx = (idx_text + idx_clau_actual) % N
+        for c in text:
+            if self._lletra_valida(c):
+                idx_text = self.ALFABET.index(c)
+                idx_clau_actual = self.ALFABET.index(clau[idx_clau % len(clau)])
+                if encripta:
+                    nova_idx = (idx_text + idx_clau_actual) % self.N
+                else:
+                    nova_idx = (idx_text - idx_clau_actual) % self.N
+                lletra = self.ALFABET[nova_idx]
+                if barreja_majuscules and random.choice([True, False]):
+                    lletra = lletra.lower()
+                resultat.append(lletra)
+                idx_clau += 1
             else:
-                nova_idx = (idx_text - idx_clau_actual) % N
-            lletra = ALFABET[nova_idx]
-            # Aleatoriament posa majúscula o minúscula
-            if barreja_majuscules and random.choice([True, False]):
-                lletra = lletra.lower()
-            resultat.append(lletra)
-            idx_clau += 1
-        else:
-            resultat.append(c)  # Manté espais, signes, etc.
+                resultat.append(c)  # Manté espais, signes, etc.
 
-    return ''.join(resultat)
+        return ''.join(resultat)
