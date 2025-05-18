@@ -1,12 +1,21 @@
 import streamlit as st
+from encrypter import VigenereCatala
 
 st.title("MasterChef II: Encrypted edition🕵️‍♂️")
 
 opcions = st.selectbox("Tria una acció:", ["Encriptar", "Desencriptar"])
-clau = st.text_input("Clau")
+clau = st.text_input("Clau").upper()
 text = st.text_area("Text 2", height=400)  # quadre més alt
 
+v = VigenereCatala(clau)
+
+
 if st.button("Executa"):
-    resultat = (clau + " " + text).upper()  # Exemple simple
-    # st.write("Resultat:\n", resultat)
-    st.write("Resultat:\n", "Aquesta web encara no està disponible. Trenca't una mica el cap, va" )
+    if opcions == "Encriptar":
+        resultat = v.vigenere(text, clau, encripta=True)
+        st.write("Resultat:\n", resultat)
+    elif opcions == "Desencriptar":
+        resultat = v.vigenere(text, clau, encripta=False, barreja_majuscules=False)
+        st.write("Resultat:\n", resultat)
+    else:
+        st.write("Algo ha anat malament, torna a intentar" )
