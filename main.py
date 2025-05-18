@@ -1,4 +1,5 @@
 import streamlit as st
+import re
 from encrypter import VigenereCatala
 
 st.title("MasterChef II: Encrypted edition🕵️‍♂️")
