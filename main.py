@@ -32,7 +32,7 @@ opcions = st.selectbox("Tria una acció:", ["Desencriptar", "Encriptar"])
 clau = st.text_input("Clau").upper().replace(" ", "")
 clau = elimina_accents(clau)
 clau = neteja_caracters_especials(clau)
-text = st.text_area("Text 2", height=300)  # quadre més alt
+text = st.text_area("Text", height=300)  # quadre més alt
 
 v = VigenereCatala(clau)
 
